@@ -1,0 +1,34 @@
+{
+	"help":[
+		"Binary Quiz is a quiz-type game to study and practise the decimal integer to binary encoding",
+		"There are 4 difficulty modes:\n- Edutainment: nums are less then 32, equiped with on-screen help\n- Easy: nums are less then 64\n- Advanced. 256\n - PRO. Guess numbers with a keyboard",
+		"A binary system is a positional notation where numbers are expressed in the base-2 numeral system wich represents numerical values using only two different symbols: 0 and 1",
+		"Bin -> Dec covertation\nbin number: 110001\n1 * 2^5 + 1 * 2^4 + 0 * 2^3 + 0 * 2^2 + 0 * 2^1 + 1 * 2^0 = 49\ndecimal number: 49",
+		"Dec -> Bin\ndec num: 19\nI var\na\/b = a div b\t(a mod b):\n19\/2 = \t(1)\n9\/2 = 4\t(1)\n4\/2 = 2\t(0)\n2\/2 = 1\t(0)\n1\/2 = 0\t(1)\bin: 10011\nII var\n19 = 16 + 2 + 1 = 2^4 + 2^1 + 2^0 = \n1*2^4+0^3+0^2+1*2^1+1*2^0=10011",
+		"2^x=a, x:\n0\t=\t1\n1\t=\t2\n2\t=\t4\n3\t=\t8\n4\t=\t16\n5\t=\t32\n6\t=t64\n7\t=\t128\n8\t=\t256\n9\t=512\n10\t=\t1024",
+		"by Mark Simanovskiy aka Sinapsel\n 6 jan 2017",
+		"License\n\nCopyright (c) jan 2017 Sinapsel\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, limits rights to relicense or sell, including without said limitation the rights to use, copy, modify, subject to the following conditions and limitations:\n\n The above copyright notice and this permission notice shall be included in all uncommercial copies or substantial portions of the Software.\n It is prohibited to use the Software for commercial purposes\n\nThe Software isprovided \"as is\", without warranty of any kind, express or implied, incuding but not limited warranties of Fitness for a particular purpose and noninfringment\nIn no event shell the authors and copyright holders be liable for any claim, damages or other liability, wheter in an action of contract, tort or otherwise, arising from out of or in connection with the sowftware or the use or the other dealing in the software"
+	],
+	
+	"menuInterface":[
+		"\tHigh Record: ",
+		"Difficulty",
+		"Edutainment",
+		"Easy",
+		"Advance",
+		"PRO",
+		"Calculator",
+		"Help",
+		"Exit"
+	],
+	"gamePlay":[
+		"Paused",
+		"Continue",
+		"Menu",
+		"\tScores: ",
+		"Restart"
+	],
+	"mutattor":[
+		"Back"
+	]
+}
