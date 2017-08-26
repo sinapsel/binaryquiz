@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class main : MonoBehaviour
+public class main : MonoBehaviour, IBasicVoids
 {
 	public Text Num, Right;
 
@@ -16,8 +16,9 @@ public class main : MonoBehaviour
 	public int scores = 0;
 	public Text ScrText;
 	public Lang lang = new Lang ();
+	GameController c = new GameController ();
 
-
+	//Implementation
 	public void GenNum ()
 	{
 		int Numerical = Random.Range (1,4096);
@@ -25,6 +26,25 @@ public class main : MonoBehaviour
 		GameObject.Find ("RightBinary").GetComponent<Text>().text = System.Convert.ToString (Numerical,2);
 		stT = dTime;
 	}
+
+	//implementation
+	public void Restart(){
+		Application.LoadLevel (Application.loadedLevel);
+	}
+	//implementation
+	public void MenuGegangen(){
+		Application.LoadLevel (0);
+	}
+	//Implementation
+	public void OnPauseUpauseClick(int a){
+		if (a == 1) {
+			isPaused = c.Pause (dTime, out tB);
+		} else if (a == 0) {
+			isPaused = c.UnPause ();
+			GenNum ();
+		}
+	}
+
 
 	public void PressedOne(){
 		GameObject.Find ("Keyed").GetComponent<Text> ().text += "1";
@@ -44,54 +64,14 @@ public class main : MonoBehaviour
 		Right.text = ress + "";
 	}
 
-	public void prepareMenu(){
-		GameObject.Find("PauseText").GetComponent<Text>().text = this.lang.gamePlay[0];
-		GameObject.Find("ResumeButtonText").GetComponent<Text>().text = this.lang.gamePlay[1];
-		GameObject.Find("MenuGehenText").GetComponent<Text>().text = this.lang.gamePlay[2];
-		GameObject.Find("RestartText").GetComponent<Text>().text = this.lang.gamePlay[4];
-		GameObject.Find("MenuGehenText2").GetComponent<Text>().text = this.lang.gamePlay[2];
-	}
 
-	public void Restart(){
-		Application.LoadLevel (Application.loadedLevel);
-	}
 
-	// Use this for initialization
 	void Start ()
 	{
-		#if UNITY_ANDROID && !UNITY_EDITOR
-		string path = Path.Combine(Application.streamingAssetsPath, "Languages/" +  PlayerPrefs.GetString("Lang")+ ".json");
-		WWW reader = new WWW(path);
-		while (!reader.isDone) { }
-		this.lang.json = reader.text;
-		#else
-		this.lang.json = File.ReadAllText(Application.streamingAssetsPath + "/Languages/" + PlayerPrefs.GetString("Lang") + ".json");
-		#endif
-		this.lang = JsonUtility.FromJson<Lang>(this.lang.json);
-		this.prepareMenu ();
-
+		c.prepareMenu ();
 		GenNum ();
 	}
 
-	public void Pause(){
-		isPaused = true;
-		GameObject.Find ("PausePanel").GetComponent<Animation> ().Play ();
-		tB = dTime;
-	}
-
-	public void UnPause(){
-		Vector2 temp = transform.position;
-		temp.y = 1280;
-		GameObject.Find ("PausePanel").GetComponent<RectTransform> ().position = temp;
-		isPaused = false;
-		GameObject.Find ("Num").GetComponent<Animation> ().Play ();
-		GenNum ();
-	}
-	public void MenuGegangen(){
-		Application.LoadLevel (0);
-	}
-
-	// Update is called once per frame
 	void Update ()
 	{
 		Conversation ();
@@ -122,5 +102,7 @@ public class main : MonoBehaviour
 			PlayerPrefs.SetInt ("HighScore", scores);
 		}
 		TimeBar.rectTransform.localScale = new Vector2 (1 - violence * dTime, 1);
+		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Menu))
+			isPaused = c.Pause(dTime, out tB);
 	}
 }
