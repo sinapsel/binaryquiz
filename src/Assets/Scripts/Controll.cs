@@ -46,7 +46,7 @@ public interface IBasicVoids{
 	void GenNum();
 	void Restart ();
 	void MenuGegangen();
-	void OnPauseUpauseClick (int a);
+	void OnPauseUpauseClick ();
 }
 
 public class Controll : MonoBehaviour {}

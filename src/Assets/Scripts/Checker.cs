@@ -29,17 +29,17 @@ public class Checker : MonoBehaviour, IBasicVoids
 	}
 	//Implementation
 	public void Restart(){
-		Application.LoadLevel (Application.loadedLevel);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 	}	
 	//Implementation
 	public void MenuGegangen(){
-		Application.LoadLevel (0);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 	}
 	//Implementation
-	public void OnPauseUpauseClick(int a){
-		if (a == 1) {
+	public void OnPauseUpauseClick(){
+		if (!isPaused) {
 			isPaused = c.Pause (dTime, out tB);
-		} else if (a == 0) {
+		} else {
 			isPaused = c.UnPause ();
 			GenNum ();
 		}
