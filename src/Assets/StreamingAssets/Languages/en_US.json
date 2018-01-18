@@ -10,6 +10,17 @@
 		"License\n\nCopyright (c) jan 2017 Sinapsel\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, limits rights to relicense or sell, including without said limitation the rights to use, copy, modify, subject to the following conditions and limitations:\n\n The above copyright notice and this permission notice shall be included in all uncommercial copies or substantial portions of the Software.\n It is prohibited to use the Software for commercial purposes\n\nThe Software isprovided \"as is\", without warranty of any kind, express or implied, incuding but not limited warranties of Fitness for a particular purpose and noninfringment\nIn no event shell the authors and copyright holders be liable for any claim, damages or other liability, wheter in an action of contract, tort or otherwise, arising from out of or in connection with the sowftware or the use or the other dealing in the software"
 	],
 	
+	"help_R":[
+		"Binary Quiz 1&0 is a quiz-type game to study and practise bitwise operations",
+		"There are 4 difficulty modes\n- Edutainment. Bitwise OR(|), Bitwise AND(&) and a Bitwise XOR(^) of two bit patterns\n- Easy. Now You must learn how to sum\n- Продвинутый. Now nums are decimal and sometimes you have to multiply them\n- PRO. Guess numbers with a keyboard",
+		"Conjunction, Bitwise AND (&)\n|0|0| 0\n|0|1| 0\n|1|0| 0\n|1|1| 1",
+		"Disjunction, Bitwise OR (|)\n|0|0| 0\n|0|1| 1\n|1|0| 1\n|1|1| 1",
+		"Strict disjunction, Exclusive or, Bitwise XOR (^)\n|0|0| 0\n|0|1| 1\n|1|0| 1\n|1|1| 0",
+		"All arithmetics is built on AND, OR and XOR. Let we sum up two binary numbers: 1101 и 1011. Also we need a carry \"c\" = 0 at the start.\n Let we do with a and b(digits) k=a^b^c and с = a&b|b&c|a&c where k goes as a new digit to the sum: 1)1^1^0=0, 1&0|0&0|1&1=1\n2)1^1^0=0, 0&0|1&0|1&1=1\n3)1^0^1=0, 0&0|1&0|1&1=1\n4)1^1^1=1, 1&1|1&1|1&1=1\n5)0^0^1=1, 0&1|0&1|0&0=1\n The sum is 11000",
+		"by Mark Simanovskiy aka Sinapsel\n 6 jan 2017",
+		"License\n\nCopyright (c) jan 2017 Sinapsel\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, limits rights to relicense or sell, including without said limitation the rights to use, copy, modify, subject to the following conditions and limitations:\n\n The above copyright notice and this permission notice shall be included in all uncommercial copies or substantial portions of the Software.\n It is prohibited to use the Software for commercial purposes\n\nThe Software isprovided \"as is\", without warranty of any kind, express or implied, incuding but not limited warranties of Fitness for a particular purpose and noninfringment\nIn no event shell the authors and copyright holders be liable for any claim, damages or other liability, wheter in an action of contract, tort or otherwise, arising from out of or in connection with the sowftware or the use or the other dealing in the software"
+	],
+	
 	"menuInterface":[
 		"\tHigh Record: ",
 		"Difficulty",
