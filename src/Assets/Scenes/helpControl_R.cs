@@ -5,19 +5,19 @@ using System.IO;
 using UnityEngine.UI;
 
 
-public class helpControl : MonoBehaviour {
+public class helpControl_R : MonoBehaviour {
 	public Lang lang = new Lang ();
 
 
 	public void prepareMenu(){
-		GameObject.Find("about").GetComponent<Text>().text = this.lang.help[0];
-		GameObject.Find("rejimes").GetComponent<Text>().text = this.lang.help[1];
-		GameObject.Find("about2").GetComponent<Text>().text = this.lang.help[2];
-		GameObject.Find("B2D").GetComponent<Text>().text = this.lang.help[3];
-		GameObject.Find("D2B").GetComponent<Text>().text = this.lang.help[4];
-		GameObject.Find("Table").GetComponent<Text>().text = this.lang.help[5];
-		GameObject.Find("creds").GetComponent<Text>().text = this.lang.help[6];
-		GameObject.Find("License").GetComponent<Text>().text = this.lang.help[7];
+		GameObject.Find("about").GetComponent<Text>().text = this.lang.help_R[0];
+		GameObject.Find("rejimes").GetComponent<Text>().text = this.lang.help_R[1];
+		GameObject.Find("about2").GetComponent<Text>().text = this.lang.help_R[2];
+		GameObject.Find("B2D").GetComponent<Text>().text = this.lang.help_R[3];
+		GameObject.Find("D2B").GetComponent<Text>().text = this.lang.help_R[4];
+		GameObject.Find("Table").GetComponent<Text>().text = this.lang.help_R[5];
+		GameObject.Find("creds").GetComponent<Text>().text = this.lang.help_R[6];
+		GameObject.Find("License").GetComponent<Text>().text = this.lang.help_R[7];
 	}
 	void Start () {
 		#if UNITY_ANDROID && !UNITY_EDITOR

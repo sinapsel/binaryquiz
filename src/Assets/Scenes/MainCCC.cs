@@ -26,7 +26,8 @@ public class MainCCC : MonoBehaviour {
 		GameObject.Find("BackText").GetComponent<Text>().text = this.lang.mutattor[0];
 	}
 	public void Back(){
-		Application.LoadLevel (0);
+		//Application.LoadLevel (0);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 	}
 	private int BinToInt(string binaryNumber)
 	{
